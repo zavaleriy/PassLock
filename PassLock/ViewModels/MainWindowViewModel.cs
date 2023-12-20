@@ -84,8 +84,8 @@ namespace PassLock.ViewModels
             EditCommand = ReactiveCommand.Create<TablePassword>(pwd => new EditWindow(pwd, this).Show());
             DeleteCommand = ReactiveCommand.Create<TablePassword>(pwd =>
             {
-                gridHeight = _gridSize.TryGetValue(dataItems.Count, out double value) ? value : gridHeight;
                 dataItems.Remove(pwd);
+                gridHeight = _gridSize.TryGetValue(dataItems.Count, out double value) ? value : gridHeight;
             });
 
         }
