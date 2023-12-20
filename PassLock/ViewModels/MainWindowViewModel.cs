@@ -30,7 +30,7 @@ namespace PassLock.ViewModels
             {5, 199},
         };
 
-        public double _gridHeight = 33;
+        private double _gridHeight = 33;
 
         public double gridHeight
         {

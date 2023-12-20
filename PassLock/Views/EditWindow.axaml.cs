@@ -27,20 +27,19 @@ namespace PassLock.Views
 
         private void ButtonConfirm_OnClick(object? sender, RoutedEventArgs e)
         {
-            _editPassword.Title = BoxTitle.Text;
-            _editPassword.Login = BoxLogin.Text;
-            _editPassword.Url = BoxWebsite.Text;
-            _editPassword.Password = BoxPwd.Text;
-            _editPassword.Note = BoxNote.Text;
-            _editPassword.LastMod = DateTime.Now;
-            
             if (DataContext is MainWindowViewModel mainWindowViewModel)
             {
-                mainWindowViewModel.row = _editPassword;
+                int idx = mainWindowViewModel.dataItems.IndexOf(_editPassword);
+                _editPassword.Title = BoxTitle.Text;
+                _editPassword.Login = BoxLogin.Text;
+                _editPassword.Url = BoxWebsite.Text;
+                _editPassword.Password = BoxPwd.Text;
+                _editPassword.Note = BoxNote.Text;
+                _editPassword.LastMod = DateTime.Now;
+                mainWindowViewModel.dataItems[idx] = _editPassword;
+                Close();
+
             }
-            
-            Close();
-            
         }
         
     }
