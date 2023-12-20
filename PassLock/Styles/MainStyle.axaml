@@ -1,0 +1,53 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<Design.PreviewWith>
+		<Border Padding="20" Width="400">
+			<StackPanel Spacing="10">
+				<TextBox Watermark="TextBox"/>
+				<Button Content="Button" Classes="mb" />
+				<Button Content="Link Button" Classes="link" />
+				<Label Content="Label"/>
+				<RadioButton Content="Radio Button"/>
+				<ToggleButton Content="Toggle Button"/>
+				<CheckBox Content="CheckBox"/>
+			</StackPanel>
+		</Border>
+	</Design.PreviewWith>
+
+	<!-- https://colorhunt.co/palette/f3eeeaebe3d5b0a695776b5d -->
+
+	<Style Selector="Window">
+		<Setter Property="RequestedThemeVariant" Value="Light"/>
+		<Setter Property="WindowStartupLocation" Value="CenterScreen"/>
+		<Setter Property="CanResize" Value="False"/>
+		<Setter Property="ExtendClientAreaToDecorationsHint" Value="True"/>
+		<Setter Property="Icon" Value="/Assets/favicon.ico"/>
+	</Style>
+
+	<Style Selector="TextBox">
+		<Setter Property="BorderBrush" Value="#776B5D" />
+	</Style>
+
+	<Style Selector="Button.mb">
+		<Setter Property="BorderBrush" Value="#776B5D"/>
+	</Style>
+
+	<Style Selector="Button.link">
+		<Setter Property="Foreground" Value="Blue"/>
+		<Setter Property="Padding" Value="0"/>
+		<Setter Property="Cursor" Value="Hand"/>
+		<Setter Property="BorderThickness" Value="0"/>
+		<Setter Property="Background" Value="Transparent"/>
+
+		<Style Selector="^:pointerover /template/ ContentPresenter">
+			<Setter Property="Foreground" Value="Blue"/>
+			<Setter Property="Background" Value="Transparent"/>
+		</Style>
+		<Style Selector="^:pressed /template/ ContentPresenter">
+			<Setter Property="Background" Value="Transparent"/>
+		</Style>
+
+	</Style>
+
+
+</Styles>

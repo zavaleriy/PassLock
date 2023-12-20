@@ -1,0 +1,38 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:PassLock.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" Width="300" Height="400"
+        x:Class="PassLock.Views.LoginWindow"
+        x:DataType="vm:LoginWindowViewModel"
+        Title="Authorization">
+
+	<Window.Styles>
+		<StyleInclude Source="/Styles/LoginStyle.axaml" />
+		<StyleInclude Source="/Styles/MainStyle.axaml" />
+	</Window.Styles>
+
+	<Grid ShowGridLines="False" ColumnDefinitions=".5*, 1*, .5*" RowDefinitions="1*,2*,1*">
+
+		<Panel Classes="ac" Grid.Row="0" Grid.Column="1" >
+			<Label FontSize="22" Content="Авторизация" />
+		</Panel>
+
+		<StackPanel Grid.Row="1" Grid.Column="1" Margin="0 10 0 0">
+			<TextBox x:Name="BoxLogin" Watermark="Login" />
+			<TextBox x:Name="BoxPassword" PasswordChar="•" Watermark="Password" />
+		</StackPanel>
+
+		<StackPanel Classes="ac" Grid.Row="1" Grid.Column="1" Margin="0 0 0 30" VerticalAlignment="Bottom">
+			<TextBlock x:Name="BlockWarn" FontSize="12" HorizontalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap" />
+			<Button x:Name="BtnLogin" Classes="mb" Click="BtnLogin_OnClick" Content="Войти" />
+		</StackPanel>
+
+		<StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Bottom">
+			<Button x:Name="BtnReg" Click="BtnReg_OnClick" Classes="link" Content="Нет аккаунта?" />
+		</StackPanel>
+
+	</Grid>
+	
+</Window>

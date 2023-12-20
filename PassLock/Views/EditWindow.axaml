@@ -1,0 +1,46 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:vm="using:PassLock.ViewModels"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" Width="300" Height="400"
+        WindowStartupLocation="CenterOwner"
+        CanResize="False"
+        RequestedThemeVariant="Light"
+        ExtendClientAreaToDecorationsHint="True"
+        x:DataType="vm:MainWindowViewModel"
+        x:Class="PassLock.Views.EditWindow"
+        Title="SY | Edit">
+    
+    <Window.Styles>
+        <Style Selector="TextBox">
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="MinWidth" Value="100"/>
+            <Setter Property="Padding" Value="6,6,6,5"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        </Style>
+    </Window.Styles>
+    
+    <Panel>
+        <ExperimentalAcrylicBorder IsHitTestVisible="False">
+            <ExperimentalAcrylicBorder.Material>
+                <ExperimentalAcrylicMaterial
+                    BackgroundSource="Digger"
+                    TintColor="AntiqueWhite"
+                    TintOpacity="1"
+                    MaterialOpacity="0.65" />
+            </ExperimentalAcrylicBorder.Material>
+        </ExperimentalAcrylicBorder>
+        
+        <StackPanel Spacing="10" Margin="0 25 0 0" >
+            <TextBox Name="BoxTitle" Text="{Binding Title}" Watermark="Title"/>
+            <TextBox Name="BoxWebsite" Text="{Binding Url}" Watermark="Website"/>
+            <TextBox Name="BoxLogin" Text="{Binding Login}" Watermark="Login"/>
+            <TextBox Name="BoxPwd" Text="{Binding Password}" Watermark="Password"/>
+            <TextBox Name="BoxNote" Text="{Binding Note}" Watermark="Note"/>
+            <Button Name="ButtonConfirm" Click="ButtonConfirm_OnClick" HorizontalAlignment="Center" Content="Внести изменения"/>
+        </StackPanel>
+        
+  </Panel>
+</Window>

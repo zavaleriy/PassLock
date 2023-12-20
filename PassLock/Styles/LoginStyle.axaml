@@ -1,0 +1,34 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<Design.PreviewWith>
+		<Border Padding="20" Width="400">
+			<StackPanel Spacing="10">
+				<TextBox Watermark="TextBox"/>
+				<Button Content="Button" />
+				<Label Content="Label"/>
+				<RadioButton Content="Radio Button"/>
+				<CheckBox Content="CheckBox"/>
+			</StackPanel>
+		</Border>
+	</Design.PreviewWith>
+
+	<Style Selector="TextBox">
+		<Setter Property="HorizontalAlignment" Value="Center"/>
+		<Setter Property="MinWidth" Value="90"/>
+	</Style>
+
+	<Style Selector="Button">
+		<Setter Property="HorizontalAlignment" Value="Center" />
+	</Style>
+
+	<!-- Align Center -->
+	<Style Selector="Panel.ac">
+		<Setter Property="VerticalAlignment" Value="Center"/>
+		<Setter Property="HorizontalAlignment" Value="Center"/>
+	</Style>
+
+	<Style Selector="StackPanel">
+		<Setter Property="Spacing" Value="10" />
+	</Style>
+
+</Styles>
