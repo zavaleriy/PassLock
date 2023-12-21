@@ -46,7 +46,7 @@ namespace PassLock.ViewModels
 
         public TablePassword row
         {
-            get { return _row; }
+            get => _row; 
             set
             {
                 _row = value;
@@ -54,6 +54,18 @@ namespace PassLock.ViewModels
             }
         }
 
+        private int _tabIndex;
+
+        public int TabIndex
+        {
+            get => _tabIndex; 
+            set
+            {
+                _tabIndex = value;
+                this.RaisePropertyChanged();
+            }
+        }
+        
         public string Title { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
@@ -74,6 +86,13 @@ namespace PassLock.ViewModels
         public MainWindowViewModel()
         {
             dataItems = new ObservableCollection<TablePassword>();
+
+            // Костыль для обновления DataGrid
+            dataItems.CollectionChanged += (sender, args) =>
+            {
+                TabIndex = 0; // 0 - Home
+                TabIndex = 1; // 1 - PassLock
+            };
 
             NewAccountCommand = ReactiveCommand.Create(NewAccount);
             

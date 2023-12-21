@@ -29,7 +29,7 @@
 			<TextBlock VerticalAlignment="Center" Margin="25 0 0 0">SY</TextBlock>
 		</Grid>
 		<Grid Grid.Row="1">
-			<TabControl TabStripPlacement="Left">
+			<TabControl TabStripPlacement="Left" SelectedIndex="{Binding TabIndex}">
 				
 				<!-- HOME -->
 				<TabItem>
@@ -168,8 +168,12 @@
 								<TextBlock Text="\{EMAIL\}" x:Name="BlockEmail"/>
 								<TextBlock Text="\{CREATED_AT\}" x:Name="BlockCreatedDate"/>
 								<StackPanel Orientation="Horizontal">
+									<TextBlock Text="Подтвержденная почта"/>
+									<PathIcon Foreground="Red" Height="10" Data="{StaticResource dismiss_regular}"/>
+								</StackPanel>
+								<StackPanel Orientation="Horizontal">
 									<TextBlock Text="Двухфакторная аутентификация"/>
-									<PathIcon x:Name="IconTfa" Foreground="Red" Height="10" Data="{StaticResource dismiss_regular}"/>
+									<PathIcon Foreground="Red" Height="10" Data="{StaticResource dismiss_regular}"/>
 								</StackPanel>
 							</StackPanel>
 						</Border>
