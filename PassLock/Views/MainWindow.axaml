@@ -25,7 +25,7 @@
 	</Design.DataContext>
 	
 	<Grid RowDefinitions="30, *">
-		<Grid ColumnDefinitions="Auto, *" IsHitTestVisible="False" Background="#D0D0D0">
+		<Grid ColumnDefinitions="Auto, *" IsHitTestVisible="False" Background="{DynamicResource SystemAccentColor}">
 			<TextBlock VerticalAlignment="Center" Margin="25 0 0 0">SY</TextBlock>
 		</Grid>
 		<Grid Grid.Row="1">
